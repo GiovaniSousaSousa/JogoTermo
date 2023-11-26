@@ -6,10 +6,10 @@ public class App {
   
   public static void main(String[] args) {
     Scanner in = new Scanner(System.in);
-    Integer idx = 0;
+    Boolean validadorEntrada = true;
     loop: while (true) {
 
-      if (idx > 0) {
+      if (validadorEntrada == false) {
         System.out.print("Input invalido, reescreva...: ");        
       } else {
         System.out.println("----------------------------");
@@ -23,7 +23,6 @@ public class App {
 
       switch (input) {
         case 1:
-          // renderiza o jogo
           Palavra palavra = new Palavra();
           Jogo jogo = new Jogo(palavra.getPalavra());
           System.out.println("Iniciando o jogo...");
@@ -31,12 +30,11 @@ public class App {
           System.out.println(resultado);
           break loop;
         case 2:
-          // sai do loop
           System.err.println("Saindo...");
           in.close();
           break loop;
         default:
-          idx += 1;
+        validadorEntrada = false;
           break;
       }
 
@@ -44,83 +42,3 @@ public class App {
   }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // private static String getInputInt(Scanner in, String prompt) { 
-  //   System.out.print(prompt); 
-  //   String text = "";
-  //   while (true) { 
-  //     text = in.nextLine();
-  //     if(isInteger(text)) 
-  //       break; 
-  //       System.out.print("Try again, " + prompt);  
-  //     } 
-  //   return text; 
-  // }
-
-  // private static String getInputStr(Scanner in, String prompt) {
-  //   System.out.print(prompt); 
-  //   String text = "";
-  //   while (true) {
-  //     text = in.nextLine();
-  //     if (!Palavra.validaPalavra(text)) {
-
-  //     }
-  //   }
-  // }
-
-  // private static boolean isInteger(String str) { 
-  //   try {
-  //     Integer.parseInt(str);
-  //     return true;
-  //   } catch(NumberFormatException e) {
-  //     return false;
-  //   }
-  // }

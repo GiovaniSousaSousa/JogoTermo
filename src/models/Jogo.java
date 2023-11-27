@@ -91,7 +91,7 @@ public class Jogo {
     }
     
     if (palavraTentativaMinusculo.indexOf(letra) == this.palavra.indexOf(letra)) {
-      retorno.setCharAt(this.palavra.indexOf(letra), '+');
+      retorno.setCharAt(this.palavra.indexOf(letra), letra);
     }    
     
     return retorno;
